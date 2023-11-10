@@ -1,6 +1,7 @@
 <script>
 	import '../app.postcss';
 	import { ModeWatcher } from 'mode-watcher';
+	import NavBar from '../lib/components/NavBar/NavBar.svelte';
 
 	// SEO
 	const metaDefaults = {
@@ -51,5 +52,7 @@
 </svelte:head>
 <!-- DarkMode -->
 <ModeWatcher />
+
+<NavBar />
 
 <slot />
