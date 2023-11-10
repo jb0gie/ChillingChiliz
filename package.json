@@ -1,5 +1,5 @@
 {
-	"name": "my-app",
+	"name": "ChillingChiliz",
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
@@ -23,14 +23,20 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@threlte/core": "^6.1.0",
+		"@threlte/extras": "^7.5.1",
+		"@threlte/flex": "^0.1.0",
 		"bits-ui": "^0.6.3",
 		"clsx": "^2.0.0",
 		"formsnap": "^0.2.0",
 		"lucide-svelte": "^0.288.0",
+		"mode-watcher": "^0.0.5",
+		"postprocessing": "^6.33.3",
 		"radix-icons-svelte": "^1.2.1",
 		"sveltekit-superforms": "^1.8.0",
 		"tailwind-merge": "^1.14.0",
 		"tailwind-variants": "^0.1.16",
+		"three": "^0.158.0",
 		"zod": "^3.22.4"
 	}
 }
