@@ -10,7 +10,7 @@ Command: npx @threlte/gltf@2.0.1 shed.glb -s -T
 
   export const ref = new Group()
 
-  const gltf = useGltf('/shed-transformed.glb', { useDraco: true })
+  const gltf = useGltf('/models/shed-transformed.glb', { useDraco: true })
 
   const component = forwardEventHandlers()
 </script>

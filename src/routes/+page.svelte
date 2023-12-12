@@ -1,18 +1,50 @@
 <script>
+	import { spring } from 'svelte/motion';
 	import { Canvas, extend } from '@threlte/core';
-	import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
+	import { Sky } from '@threlte/extras';
+	import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 	import Scene from './Scene.svelte';
-	
+
 	extend({
 		OrbitControls
-	})
+	});
+
+	const presets = {
+		sunset: {
+			turbidity: 10,
+			rayleigh: 3,
+			azimuth: 180,
+			elevation: 0.5,
+			mieCoefficient: 0.005,
+			mieDirectionalG: 0.7,
+			exposure: 0.37
+		},
+		night: {
+			turbidity: 20,
+			rayleigh: 0.57,
+			azimuth: 180,
+			elevation: -5,
+			mieCoefficient: 0.038,
+			mieDirectionalG: 0,
+			exposure: 0.26
+		}
+	};
 </script>
 
 <div class="h-screen w-auto">
 	<Canvas>
-		<Scene/>
+		<Sky
+			setEnvironment={true}
+			turbidity={presets.sunset.turbidity}
+			rayleigh={presets.sunset.rayleigh}
+			azimuth={presets.sunset.azimuth}
+			elevation={presets.sunset.elevation}
+			mieCoefficient={presets.sunset.mieCoefficient}
+			mieDirectionalG={presets.sunset.mieDirectionalG}
+		/>
+		<Scene exposure={presets.sunset.exposure} />
 	</Canvas>
-	<div
+	<!-- <div
     class=" absolute top-0 left-0 h-full w-full [&>*]:pointer-events-none"
     id="int-target"
   >
@@ -20,7 +52,7 @@
       <div class="text-orange text-sm font-bold uppercase">Chilling Chiliz</div>
       <div class="text-orange text-3xl font-bold">Coolest Spice in the Metaverse</div>
     </div>
-  </div>
+  </div> -->
 </div>
 
 <!-- <div>

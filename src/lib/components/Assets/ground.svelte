@@ -10,7 +10,7 @@ Command: npx @threlte/gltf@2.0.1 ground.glb -T
 
 	export const ref = new Group();
 
-	const gltf = useGltf('/ground-transformed.glb', { useDraco: true });
+	const gltf = useGltf('/models/ground-transformed.glb', { useDraco: true });
 
 	const component = forwardEventHandlers();
 </script>

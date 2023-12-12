@@ -10,7 +10,7 @@ Command: npx @threlte/gltf@2.0.1 trees.glb -T
 
   export const ref = new Group()
 
-  const gltf = useGltf('/trees-transformed.glb', { useDraco: true })
+  const gltf = useGltf('/models/trees-transformed.glb', { useDraco: true })
 
   const component = forwardEventHandlers()
 </script>

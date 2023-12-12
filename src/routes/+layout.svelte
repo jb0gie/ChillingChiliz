@@ -53,6 +53,6 @@
 <!-- DarkMode -->
 <ModeWatcher />
 
-<!-- <NavBar /> -->
+<NavBar />
 
 <slot />

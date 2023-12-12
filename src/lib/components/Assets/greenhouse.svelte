@@ -10,7 +10,7 @@ Command: npx @threlte/gltf@2.0.1 greenhouse.glb -T
 
   export const ref = new Group()
 
-  const gltf = useGltf('/greenhouse-transformed.glb', { useDraco: true })
+  const gltf = useGltf('/models/greenhouse-transformed.glb', { useDraco: true })
 
   const component = forwardEventHandlers()
 </script>

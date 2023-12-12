@@ -10,7 +10,7 @@ Command: npx @threlte/gltf@2.0.1 windmill.glb -s -T
 
   export const ref = new Group()
 
-  const gltf = useGltf('/windmill-transformed.glb', { useDraco: true })
+  const gltf = useGltf('/models/windmill-transformed.glb', { useDraco: true })
   export const { actions, mixer } = useGltfAnimations(gltf, ref)
   $: $actions['Blade']?.play()
   $: $actions['Yaw']?.play()

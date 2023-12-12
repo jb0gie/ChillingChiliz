@@ -1,17 +1,26 @@
 <script>
 	import { forwardEventHandlers, T, useThrelte } from '@threlte/core';
-	
-	const { invalidate } = useThrelte();
-	const el = document.getElementById('int-target');
-	const component = forwardEventHandlers();
+	//Camera controls
+	import CameraControls from '../CameraControls/CameraControls.svelte'
+	import { cameraControls, mesh } from '../../stores';
+	// const { invalidate } = useThrelte();
+	// const el = document.getElementById('int-target');
+	// const component = forwardEventHandlers();
 </script>
 
-<T.PerspectiveCamera fov={75} position={[10, 10, 10]} makeDefault let:ref>
-	<T.OrbitControls 
-		bind:this={$component}
-		args={[ref, el]}
-		on:change={invalidate}
+<T.PerspectiveCamera
+	makeDefault
+	position={[10, 10, 10]}
+	on:create={({ ref }) => {
+		ref.lookAt(0, 1, 0);
+	}}
+>
+	<CameraControls
+		on:create={({ ref }) => {
+			$cameraControls = ref;
+		}}
 	/>
+	<!-- <T.OrbitControls bind:this={$component} args={[ref, el]} on:change={invalidate} /> -->
 </T.PerspectiveCamera>
 
 <!-- EXAMPLE 
