@@ -5,9 +5,9 @@
 
 	// SEO
 	const metaDefaults = {
-		title: '3PS',
-		description: 'Concierge/DAO',
-		image: '../static/favicon.png'
+		title: 'Chilling Chiliz',
+		description: 'Chill Chili',
+		image: '../../static/favicon'
 	};
 	const meta = {
 		title: metaDefaults.title,
@@ -53,6 +53,6 @@
 <!-- DarkMode -->
 <ModeWatcher />
 
-<NavBar />
+<!-- <NavBar /> -->
 
 <slot />

@@ -1,5 +1,5 @@
 {
-	"name": "ChillingChiliz",
+	"name": "chilling-chiliz",
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
@@ -27,6 +27,7 @@
 		"@threlte/extras": "^7.5.1",
 		"@threlte/flex": "^0.1.0",
 		"bits-ui": "^0.6.3",
+		"camera-controls": "^2.7.3",
 		"clsx": "^2.0.0",
 		"formsnap": "^0.2.0",
 		"lucide-svelte": "^0.288.0",
