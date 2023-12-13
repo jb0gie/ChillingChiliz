@@ -1,12 +1,7 @@
 <script>
-	import { Canvas, extend } from '@threlte/core';
+	import { Canvas } from '@threlte/core';
 	import { Sky } from '@threlte/extras';
-	import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 	import Scene from './Scene.svelte';
-
-	extend({
-		OrbitControls
-	});
 
 	const presets = {
 		sunset: {
@@ -28,6 +23,8 @@
 			exposure: 0.26
 		}
 	};
+
+	
 </script>
 
 <div class="h-screen w-auto">

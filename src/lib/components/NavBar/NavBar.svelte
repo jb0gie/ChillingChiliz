@@ -23,6 +23,7 @@
 				<a href="/" class="mr-6 flex items-center space-x-2">
 					<img src={logo} alt="" class="w-10" />
 				</a>
+				<!-- WORLD NAVIGATION DROPDOWN -->
 				<DropdownMenu.Root>
 					<DropdownMenu.Trigger asChild let:builder>
 						<Button variant="link" class={navItem} builders={[builder]}>Explore</Button>
@@ -46,12 +47,6 @@
 							</DropdownMenu.Item>
 						</a>
 						<DropdownMenu.Separator />
-						<a href="/submit" class={navItem}>
-							<DropdownMenu.Item>
-								<DropdownMenu.Label>Submissions</DropdownMenu.Label>
-							</DropdownMenu.Item>
-						</a>
-						<DropdownMenu.Separator />
 						<a href="/events" class={navItem}>
 							<DropdownMenu.Item>
 								<DropdownMenu.Label>Events</DropdownMenu.Label>
@@ -59,6 +54,7 @@
 						</a>
 					</DropdownMenu.Content>
 				</DropdownMenu.Root>
+				<!-- TEAM DROPDOWN -->
 				<DropdownMenu.Root>
 					<DropdownMenu.Trigger asChild let:builder>
 						<Button variant="link" class={navItem} builders={[builder]}>Team</Button>
@@ -91,6 +87,12 @@
 						<a href="" class={navItem}>
 							<DropdownMenu.Item>
 								<DropdownMenu.Label>Dr.Doge</DropdownMenu.Label>
+							</DropdownMenu.Item>
+						</a>
+						<DropdownMenu.Separator />
+						<a href="" class={navItem}>
+							<DropdownMenu.Item>
+								<DropdownMenu.Label>koH</DropdownMenu.Label>
 							</DropdownMenu.Item>
 						</a>
 						<DropdownMenu.Separator />

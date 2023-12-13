@@ -1,11 +1,12 @@
 <script>
 	//Threlte
 	import { T, useThrelte, useTask } from '@threlte/core';
-	import { TransformControls } from '@threlte/extras';
+	import { interactivity, TransformControls } from '@threlte/extras';
 	//ThreeJS
 	import { DirectionalLightHelper, BoxGeometry, MeshStandardMaterial } from 'three';
 	//Camera
 	import Camera from '../lib/components/Assets/camera.svelte';
+	import { cameraControls, mesh } from '../lib/stores';
 	//Static meshes (envirounment)
 	import Ground from '../lib/components/Assets/ground.svelte';
 	import Trees from '../lib/components/Assets/trees.svelte';
@@ -19,18 +20,23 @@
 	import Props from '../lib/components/Assets/props.svelte';
 	import Barn from '../lib/components/Assets/barn.svelte';
 	import House from '../lib/components/Assets/house.svelte';
-	import RockingChili from '../lib/components/Assets/rockingchili.svelte'
 	import Rockingchili from '../lib/components/Assets/rockingchili.svelte';
-	//Light setup
-	let dirLightHelpr = DirectionalLightHelper;
+	//Sky setup
 	let exposure = 1;
+
+	let camera 
+	$: if ($cameraControls) {
+		camera = $cameraControls._camera
+	}
 
 	const { renderer, invalidate } = useThrelte();
 
 	$: {
-		renderer.toneMappingExposure = exposure
-		invalidate()
+		renderer.toneMappingExposure = exposure;
+		invalidate();
 	}
+
+	interactivity()
 </script>
 
 <!-- Camera -->
@@ -67,5 +73,13 @@
 <Outhouse />
 <Props />
 <Barn />
-<House/>
-<Rockingchili/>
+<House />
+<Rockingchili
+	on:create={({ ref }) => {
+		$mesh = ref;
+	}}
+	on:click={() => {
+		// $cameraControls.setPosition(50, 10, 10, true);
+		$cameraControls.fitToBox($mesh, true);
+	}}
+/>

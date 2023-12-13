@@ -12,10 +12,11 @@ Command: npx @threlte/gltf@2.0.1 rockingchili.glb -s -T
 
 	const gltf = useGltf('/models/rockingchili-transformed.glb', { useDraco: true });
 	export const { actions, mixer } = useGltfAnimations(gltf, ref);
-	$: $actions['RockingChair']?.play();
-	$: $actions['RockingChiliBalance']?.play();
-	$: $actions['RockingChili']?.play();
+
 	$: $actions['PerfectChiliBlink']?.play();
+	$: $actions['RockingChair']?.play();
+	$: $actions['RockingChairBalance']?.play();
+	$: $actions['RockingChili']?.play();
 
 	const component = forwardEventHandlers();
 </script>
@@ -34,6 +35,7 @@ Command: npx @threlte/gltf@2.0.1 rockingchili.glb -s -T
 					material={gltf.materials.wire_006135113}
 					rotation={[-0.29, 0, 0]}
 					scale={0.8}
+					
 				>
 					<T.Group name="ArmaturePerfectChili" rotation={[0.02, 0, 0]} scale={1.25}>
 						<T is={gltf.nodes.hips} />
