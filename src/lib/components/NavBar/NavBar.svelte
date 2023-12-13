@@ -3,7 +3,7 @@
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
 	import { Button } from '$lib/components/ui/button';
 	import LightSwitch from './LightSwitch.svelte';
-	import third_planet from '$lib/images/logo-s.png';
+	import logo from './logo.png';
 	import NavBarSheet from './NavBarSheet.svelte';
 	const headStyle =
 		'supports-[backdrop-filter]:bg-background/60 sticky top-0 z-40 w-full border-b bg-background/95 shadow-sm backdrop-blur';
@@ -21,7 +21,7 @@
 		<div class="mr-4 hidden md:flex">
 			<nav class="relative py-2 flex items-center space-x-6 text-sm font-medium">
 				<a href="/" class="mr-6 flex items-center space-x-2">
-					<img src={third_planet} alt="" class="w-10" />
+					<img src={logo} alt="" class="w-10" />
 				</a>
 				<DropdownMenu.Root>
 					<DropdownMenu.Trigger asChild let:builder>
@@ -61,18 +61,42 @@
 				</DropdownMenu.Root>
 				<DropdownMenu.Root>
 					<DropdownMenu.Trigger asChild let:builder>
-						<Button variant="link" class={navItem} builders={[builder]}>Roster</Button>
+						<Button variant="link" class={navItem} builders={[builder]}>Team</Button>
 					</DropdownMenu.Trigger>
 					<DropdownMenu.Content class="w-auto">
-						<a href="/roster/art" class={navItem}>
+						<a href="" class={navItem}>
 							<DropdownMenu.Item>
-								<DropdownMenu.Label>🖼️ Art </DropdownMenu.Label>
+								<DropdownMenu.Label>Hoek</DropdownMenu.Label>
 							</DropdownMenu.Item>
 						</a>
 						<DropdownMenu.Separator />
-						<a href="/roster/music" class={navItem}>
+						<a href="" class={navItem}>
 							<DropdownMenu.Item>
-								<DropdownMenu.Label>🎶 Music </DropdownMenu.Label>
+								<DropdownMenu.Label>Don</DropdownMenu.Label>
+							</DropdownMenu.Item>
+						</a>
+						<DropdownMenu.Separator />
+						<a href="" class={navItem}>
+							<DropdownMenu.Item>
+								<DropdownMenu.Label>Howie</DropdownMenu.Label>
+							</DropdownMenu.Item>
+						</a>
+						<DropdownMenu.Separator />
+						<a href="" class={navItem}>
+							<DropdownMenu.Item>
+								<DropdownMenu.Label>Gary</DropdownMenu.Label>
+							</DropdownMenu.Item>
+						</a>
+						<DropdownMenu.Separator />
+						<a href="" class={navItem}>
+							<DropdownMenu.Item>
+								<DropdownMenu.Label>Dr.Doge</DropdownMenu.Label>
+							</DropdownMenu.Item>
+						</a>
+						<DropdownMenu.Separator />
+						<a href="" class={navItem}>
+							<DropdownMenu.Item>
+								<DropdownMenu.Label>b0gie</DropdownMenu.Label>
 							</DropdownMenu.Item>
 						</a>
 					</DropdownMenu.Content>

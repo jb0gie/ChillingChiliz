@@ -19,6 +19,8 @@
 	import Props from '../lib/components/Assets/props.svelte';
 	import Barn from '../lib/components/Assets/barn.svelte';
 	import House from '../lib/components/Assets/house.svelte';
+	import RockingChili from '../lib/components/Assets/rockingchili.svelte'
+	import Rockingchili from '../lib/components/Assets/rockingchili.svelte';
 	//Light setup
 	let dirLightHelpr = DirectionalLightHelper;
 	let exposure = 1;
@@ -66,3 +68,4 @@
 <Props />
 <Barn />
 <House/>
+<Rockingchili/>

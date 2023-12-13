@@ -1,5 +1,5 @@
 <script>
-	import third_planet from '$lib/images/logo-s.png';
+	import navLogo from './logo.png';
 </script>
 
-<img src={third_planet} alt="" class="w-10 md:hidden" />
+<img src={navLogo} alt="logo" class="w-10 md:hidden" />

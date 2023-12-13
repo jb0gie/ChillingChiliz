@@ -6,14 +6,12 @@
 	// const { invalidate } = useThrelte();
 	// const el = document.getElementById('int-target');
 	// const component = forwardEventHandlers();
+	const startPos = [0,3,60]
 </script>
 
 <T.PerspectiveCamera
 	makeDefault
-	position={[10, 10, 10]}
-	on:create={({ ref }) => {
-		ref.lookAt(0, 1, 0);
-	}}
+	position={startPos}
 >
 	<CameraControls
 		on:create={({ ref }) => {

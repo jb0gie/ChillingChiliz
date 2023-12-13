@@ -2,7 +2,7 @@
 	import '../app.postcss';
 	import { ModeWatcher } from 'mode-watcher';
 	import NavBar from '../lib/components/NavBar/NavBar.svelte';
-
+	import FootBar from '../lib/components/FootBar/FootBar.svelte';
 	// SEO
 	const metaDefaults = {
 		title: 'Chilling Chiliz',
@@ -56,3 +56,5 @@
 <NavBar />
 
 <slot />
+
+<FootBar />

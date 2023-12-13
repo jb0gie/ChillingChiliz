@@ -1,5 +1,4 @@
 <script>
-	import { spring } from 'svelte/motion';
 	import { Canvas, extend } from '@threlte/core';
 	import { Sky } from '@threlte/extras';
 	import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
@@ -45,12 +44,12 @@
 		<Scene exposure={presets.sunset.exposure} />
 	</Canvas>
 	<!-- <div
-    class=" absolute top-0 left-0 h-full w-full [&>*]:pointer-events-none"
+    class="absolute top-0 left-0 h-full w-full [&>*]:pointer-events-none"
     id="int-target"
   >
     <div class="relative top-6 left-6">
-      <div class="text-orange text-sm font-bold uppercase">Chilling Chiliz</div>
-      <div class="text-orange text-3xl font-bold">Coolest Spice in the Metaverse</div>
+      <div class="text-purple text-sm font-bold uppercase">Chilling Chiliz</div>
+      <div class="text-green text-3xl font-bold"><code>dev~mode</code></div>
     </div>
   </div> -->
 </div>
