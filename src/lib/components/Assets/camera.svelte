@@ -6,7 +6,7 @@
 	// const { invalidate } = useThrelte();
 	// const el = document.getElementById('int-target');
 	// const component = forwardEventHandlers();
-	const startPos = [0, 3, 60];
+	const startPos = [0, 20, 60];
 </script>
 
 <T.PerspectiveCamera

@@ -20,13 +20,15 @@
 	import Props from '../lib/components/Assets/props.svelte';
 	import Barn from '../lib/components/Assets/barn.svelte';
 	import House from '../lib/components/Assets/house.svelte';
+	import Garage from '../lib/components/Assets/garage.svelte';
 	import Rockingchili from '../lib/components/Assets/rockingchili.svelte';
+	import Drivingchili from '../lib/components/Assets/drivingchili.svelte';
 	//Sky setup
 	let exposure = 1;
-
-	let camera 
+	//Camera Setup
+	let camera;
 	$: if ($cameraControls) {
-		camera = $cameraControls._camera
+		camera = $cameraControls._camera;
 	}
 
 	const { renderer, invalidate } = useThrelte();
@@ -36,7 +38,7 @@
 		invalidate();
 	}
 
-	interactivity()
+	interactivity();
 </script>
 
 <!-- Camera -->
@@ -66,7 +68,6 @@
 <Trees />
 <Fence />
 <Road />
-<!-- IF OR EACH BLOCK i think goes here  -->
 <Greenhouse />
 <Windmill />
 <Shed />
@@ -74,12 +75,20 @@
 <Props />
 <Barn />
 <House />
+<Garage />
 <Rockingchili
 	on:create={({ ref }) => {
 		$mesh = ref;
 	}}
 	on:click={() => {
-		// $cameraControls.setPosition(50, 10, 10, true);
+		$cameraControls.fitToBox($mesh, true);
+	}}
+/>
+<Drivingchili
+	on:create={({ ref }) => {
+		$mesh = ref;
+	}}
+	on:click={() => {
 		$cameraControls.fitToBox($mesh, true);
 	}}
 />

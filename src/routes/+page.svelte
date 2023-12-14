@@ -1,54 +1,59 @@
 <script>
+	import { toggleMode, mode } from 'mode-watcher';
+	import { onDestroy } from 'svelte';
+	import { spring } from 'svelte/motion';
 	import { Canvas } from '@threlte/core';
 	import { Sky } from '@threlte/extras';
 	import Scene from './Scene.svelte';
 
+	let currentMode;
 	const presets = {
-		sunset: {
-			turbidity: 10,
-			rayleigh: 3,
+		light: {
+			turbidity: 0.65,
+			rayleigh: 0.17,
 			azimuth: 180,
-			elevation: 0.5,
-			mieCoefficient: 0.005,
+			elevation: 85,
+			mieCoefficient: 0.013,
 			mieDirectionalG: 0.7,
-			exposure: 0.37
+			exposure: 1
 		},
-		night: {
+		dark: {
 			turbidity: 20,
-			rayleigh: 0.57,
-			azimuth: 180,
-			elevation: -5,
-			mieCoefficient: 0.038,
-			mieDirectionalG: 0,
-			exposure: 0.26
+      rayleigh: 0.57,
+      azimuth: 180,
+      elevation: -5,
+      mieCoefficient: 0.038,
+      mieDirectionalG: 0,
+      exposure: 0.26
 		}
 	};
 
-	
+	// initialize with light mode preset
+	let springValue = spring(presets.light, { damping: 0.95, precision: 0.0001, stiffness: 0.05 }); 
+
+	// update the spring value when the mode changes
+	let unsubscribe = mode.subscribe((value) => {
+		currentMode = value;
+		springValue.set(presets[currentMode]); 
+	});
+
+	onDestroy(() => {
+		unsubscribe(); // clean up the subscription
+	});
 </script>
 
 <div class="h-screen w-auto">
 	<Canvas>
-		<Sky
-			setEnvironment={true}
-			turbidity={presets.sunset.turbidity}
-			rayleigh={presets.sunset.rayleigh}
-			azimuth={presets.sunset.azimuth}
-			elevation={presets.sunset.elevation}
-			mieCoefficient={presets.sunset.mieCoefficient}
-			mieDirectionalG={presets.sunset.mieDirectionalG}
-		/>
-		<Scene exposure={presets.sunset.exposure} />
+		<Sky {...$springValue} />
+		<Scene exposure={$springValue.exposure} />
 	</Canvas>
-	<!-- <div
-    class="absolute top-0 left-0 h-full w-full [&>*]:pointer-events-none"
-    id="int-target"
-  >
+	<div
+    class="absolute top-10 left-0">
     <div class="relative top-6 left-6">
       <div class="text-purple text-sm font-bold uppercase">Chilling Chiliz</div>
       <div class="text-green text-3xl font-bold"><code>dev~mode</code></div>
     </div>
-  </div> -->
+  </div>
 </div>
 
 <!-- <div>

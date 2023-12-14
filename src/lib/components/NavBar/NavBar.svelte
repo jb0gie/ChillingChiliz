@@ -3,37 +3,47 @@
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
 	import { Button } from '$lib/components/ui/button';
 	import LightSwitch from './LightSwitch.svelte';
-	import logo from './logo.png';
 	import NavBarSheet from './NavBarSheet.svelte';
+	import { cameraControls } from '../../stores';
+	import logo from './logo.png';
+	//Styling
 	const headStyle =
 		'supports-[backdrop-filter]:bg-background/60 sticky top-0 z-40 w-full border-b bg-background/95 shadow-sm backdrop-blur';
 	const navIcon =
 		'inline-flex items-center justify-center font-medium whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-8 rounded-md text-xs w-9 px-0';
 	const navItem = 'transition-colors hover:text-foreground/80 text-foreground/60';
-
+	//Locals
 	let showStatusBar = true;
 	let showActivityBar = false;
 	let showPanel = false;
+
+	//Camera setup
+	let camera;
+	$: if ($cameraControls) {
+		camera = $cameraControls._camera;
+	}
+
+	function goHome(event) {
+		$cameraControls.reset(true);
+	}
 </script>
 
 <header class={headStyle}>
 	<div class="container flex h-14 items-center">
 		<div class="mr-4 hidden md:flex">
 			<nav class="relative py-2 flex items-center space-x-6 text-sm font-medium">
-				<a href="/" class="mr-6 flex items-center space-x-2">
+				<button class="mr-6 flex items-center space-x-2" on:click={goHome}>
 					<img src={logo} alt="" class="w-10" />
-				</a>
+				</button>
 				<!-- WORLD NAVIGATION DROPDOWN -->
 				<DropdownMenu.Root>
 					<DropdownMenu.Trigger asChild let:builder>
 						<Button variant="link" class={navItem} builders={[builder]}>Explore</Button>
 					</DropdownMenu.Trigger>
 					<DropdownMenu.Content class="w-auto">
-						<a href="/home" class={navItem}>
-							<DropdownMenu.Item>
+							<DropdownMenu.Item on:click={goHome}>
 								<DropdownMenu.Label>Home</DropdownMenu.Label>
 							</DropdownMenu.Item>
-						</a>
 						<DropdownMenu.Separator />
 						<a href="/about" class={navItem}>
 							<DropdownMenu.Item>
