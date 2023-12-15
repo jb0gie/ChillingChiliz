@@ -7,6 +7,7 @@
 	import Scene from './Scene.svelte';
 
 	let currentMode;
+	
 	const presets = {
 		light: {
 			turbidity: 0.65,
@@ -47,8 +48,7 @@
 		<Sky {...$springValue} />
 		<Scene exposure={$springValue.exposure} />
 	</Canvas>
-	<div
-    class="absolute top-10 left-0">
+	<div class="absolute top-10 left-0">
     <div class="relative top-6 left-6">
       <div class="text-purple text-sm font-bold uppercase">Chilling Chiliz</div>
       <div class="text-green text-3xl font-bold"><code>dev~mode</code></div>

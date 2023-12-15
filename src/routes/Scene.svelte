@@ -6,26 +6,19 @@
 	import { DirectionalLightHelper, BoxGeometry, MeshStandardMaterial } from 'three';
 	//Camera
 	import Camera from '../lib/components/Assets/camera.svelte';
-	import { cameraControls, mesh } from '../lib/stores';
+	import { cameraControls, rockingChili, drivingChili, walkingChili, plant } from '../lib/stores';
 	//Static meshes (envirounment)
-	import Ground from '../lib/components/Assets/ground.svelte';
-	import Trees from '../lib/components/Assets/trees.svelte';
-	import Road from '../lib/components/Assets/road.svelte';
-	import Fence from '../lib/components/Assets/fence.svelte';
-	//Buildings (point of interests)
-	import Windmill from '../lib/components/Assets/windmill.svelte';
-	import Greenhouse from '../lib/components/Assets/greenhouse.svelte';
-	import Shed from '../lib/components/Assets/shed.svelte';
-	import Outhouse from '../lib/components/Assets/outhouse.svelte';
-	import Props from '../lib/components/Assets/props.svelte';
-	import Barn from '../lib/components/Assets/barn.svelte';
-	import House from '../lib/components/Assets/house.svelte';
-	import Garage from '../lib/components/Assets/garage.svelte';
+	import World from './World.svelte';
+	//Interactive meshes
+	import Buildings from './Buildings.svelte';
+	import Plant from '../lib/components/Assets/plant.svelte';
+	//Animated meshes
 	import Rockingchili from '../lib/components/Assets/rockingchili.svelte';
 	import Drivingchili from '../lib/components/Assets/drivingchili.svelte';
+	import Walkingchili from '../lib/components/Assets/walkingchili.svelte';
 	//Sky setup
 	let exposure = 1;
-	//Camera Setup
+	//Camera-Controls
 	let camera;
 	$: if ($cameraControls) {
 		camera = $cameraControls._camera;
@@ -64,31 +57,42 @@
 	<T.Mesh geometry={new BoxGeometry(2, 2, 2)} material={new MeshStandardMaterial()} castShadow />
 </TransformControls> -->
 
-<Ground />
-<Trees />
-<Fence />
-<Road />
-<Greenhouse />
-<Windmill />
-<Shed />
-<Outhouse />
-<Props />
-<Barn />
-<House />
-<Garage />
-<Rockingchili
+<!-- Envirounment -->
+<World />
+
+<!-- POINTofINTERESTs -->
+<Buildings />
+
+<Plant
 	on:create={({ ref }) => {
-		$mesh = ref;
+		$plant = ref;
 	}}
 	on:click={() => {
-		$cameraControls.fitToBox($mesh, true);
+		$cameraControls.fitToBox($plant, true);
+	}}
+/>
+
+<Rockingchili
+	on:create={({ ref }) => {
+		$rockingChili = ref;
+	}}
+	on:click={() => {
+		$cameraControls.fitToBox($rockingChili, true);
 	}}
 />
 <Drivingchili
 	on:create={({ ref }) => {
-		$mesh = ref;
+		$drivingChili = ref;
 	}}
-	on:click={() => {
-		$cameraControls.fitToBox($mesh, true);
+	on:pointermove={() => {
+		$cameraControls.fitToBox($drivingChili, true);
+	}}
+/>
+<Walkingchili
+	on:create={({ ref }) => {
+		$walkingChili = ref;
+	}}
+	on:pointermove={() => {
+		$cameraControls.fitToBox($walkingChili, true);
 	}}
 />
