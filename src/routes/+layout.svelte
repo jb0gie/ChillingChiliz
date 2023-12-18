@@ -30,9 +30,9 @@
 	<meta name="description" content={meta.description} />
 	<meta name="keywords" content={meta.description} />
 	<meta name="author" content="b0gieman" />
-	<meta property="og:site_name" content="3PS" />
+	<meta property="og:site_name" content="Chilling Chiliz" />
 	<meta property="og:type" content="website" />
-	<!-- <meta property="og:url" content="https://thirdplanet.studio{$page.url.pathname}" /> -->
+	<!-- <meta property="og:url" content="https://chillingchiliz.com{$page.url.pathname}" /> -->
 	<meta property="og:locale" content="en_US" />
 	<meta property="og:title" content={meta.title} />
 	<meta property="og:description" content={meta.description} />
