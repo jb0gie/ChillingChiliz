@@ -62,7 +62,6 @@
 
 <!-- POINTofINTERESTs -->
 <Buildings />
-
 <Plant
 	on:create={({ ref }) => {
 		$plant = ref;
@@ -71,7 +70,6 @@
 		$cameraControls.fitToBox($plant, true);
 	}}
 />
-
 <Rockingchili
 	on:create={({ ref }) => {
 		$rockingChili = ref;
