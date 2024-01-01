@@ -17,6 +17,7 @@
 	}}
 >
 	<CameraControls
+		enabled={false}
 		on:create={({ ref }) => {
 			$cameraControls = ref;
 		}}
