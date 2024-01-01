@@ -16,6 +16,12 @@
 	import Rockingchili from '../lib/components/Assets/rockingchili.svelte';
 	import Drivingchili from '../lib/components/Assets/drivingchili.svelte';
 	import Walkingchili from '../lib/components/Assets/walkingchili.svelte';
+	import Signpost from '../lib/components/Assets/signpost.svelte';
+	import Sign1 from '../lib/components/Assets/sign1.svelte';
+	import Sign2 from '../lib/components/Assets/sign2.svelte';
+	import Sign3 from '../lib/components/Assets/sign3.svelte';
+	import Sign4 from '../lib/components/Assets/sign4.svelte';
+	import Dancingchili from '../lib/components/Assets/dancingchili.svelte';
 	//Sky setup
 	let exposure = 1;
 	//Camera-Controls
@@ -61,7 +67,14 @@
 <World />
 
 <!-- POINTofINTERESTs -->
+<Signpost/>
+<Sign1/>
+<Sign2/>
+<Sign3/>
+<Sign4/>
+
 <Buildings />
+
 <Plant
 	on:create={({ ref }) => {
 		$plant = ref;
@@ -70,6 +83,7 @@
 		$cameraControls.fitToBox($plant, true);
 	}}
 />
+
 <Rockingchili
 	on:create={({ ref }) => {
 		$rockingChili = ref;
@@ -78,19 +92,8 @@
 		$cameraControls.fitToBox($rockingChili, true);
 	}}
 />
-<Drivingchili
-	on:create={({ ref }) => {
-		$drivingChili = ref;
-	}}
-	on:pointermove={() => {
-		$cameraControls.fitToBox($drivingChili, true);
-	}}
-/>
-<Walkingchili
-	on:create={({ ref }) => {
-		$walkingChili = ref;
-	}}
-	on:pointermove={() => {
-		$cameraControls.fitToBox($walkingChili, true);
-	}}
-/>
+<Dancingchili position={[65, 0, -58]} rotation.y={90}/>
+
+<Drivingchili/>
+
+<Walkingchili/>

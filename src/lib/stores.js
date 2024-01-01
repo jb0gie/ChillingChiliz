@@ -12,3 +12,7 @@ export const rockingChili = writable(undefined);
 export const drivingChili = writable(undefined);
 export const walkingChili = writable(undefined);
 export const plant = writable(undefined);
+export const about = writable(undefined);
+export const token = writable(undefined);
+export const utility = writable(undefined);
+export const faq = writable(undefined);

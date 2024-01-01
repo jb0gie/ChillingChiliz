@@ -27,14 +27,14 @@ Command: npx @threlte/gltf@2.0.1 drivingchili.glb -s -T
   {#await gltf}
     <slot name="fallback" />
   {:then gltf}
-    <T.Group name="Vehicle">
+    <T.Group name="Scene">
       <T.Group name="Empty" position={[-19.97, 0, 30.32]}>
         <T.Mesh
           name="Body"
           castShadow
           receiveShadow
           geometry={gltf.nodes.Body.geometry}
-          material={gltf.materials['Farm3.027']}
+          material={gltf.materials['Farm3.022']}
           position={[-0.03, 1.1, 0.01]}
           rotation={[-3.14, 0, 3.14]}
         >
@@ -44,7 +44,7 @@ Command: npx @threlte/gltf@2.0.1 drivingchili.glb -s -T
             receiveShadow
             geometry={gltf.nodes.PerfectChili.geometry}
             material={gltf.materials['Perfect_Baked.003']}
-            position={[0.03, 0.24, -0.76]}
+            position={[0.01, 0.21, -0.77]}
             rotation={[-3.14, 0, 3.14]}
           />
         </T.Mesh>
@@ -53,8 +53,8 @@ Command: npx @threlte/gltf@2.0.1 drivingchili.glb -s -T
           castShadow
           receiveShadow
           geometry={gltf.nodes.Tire_tireBL.geometry}
-          material={gltf.materials['Farm3.027']}
-          position={[-0.79, 0.8, 1.16]}
+          material={gltf.materials['Farm3.022']}
+          position={[-0.77, 0.81, 1.16]}
           rotation={[Math.PI, 0, Math.PI]}
         />
         <T.Mesh
@@ -62,8 +62,8 @@ Command: npx @threlte/gltf@2.0.1 drivingchili.glb -s -T
           castShadow
           receiveShadow
           geometry={gltf.nodes.Tire_tireBR.geometry}
-          material={gltf.materials['Farm3.027']}
-          position={[0.79, 0.8, 1.16]}
+          material={gltf.materials['Farm3.022']}
+          position={[0.74, 0.81, 1.15]}
           rotation={[Math.PI, 0, Math.PI]}
         />
         <T.Mesh
@@ -71,8 +71,8 @@ Command: npx @threlte/gltf@2.0.1 drivingchili.glb -s -T
           castShadow
           receiveShadow
           geometry={gltf.nodes.Tire_tireFL.geometry}
-          material={gltf.materials['Farm3.027']}
-          position={[-0.48, 0.4, -0.92]}
+          material={gltf.materials['Farm3.022']}
+          position={[-0.49, 0.43, -0.93]}
           rotation={[Math.PI, 0, Math.PI]}
         />
         <T.Mesh
@@ -80,8 +80,8 @@ Command: npx @threlte/gltf@2.0.1 drivingchili.glb -s -T
           castShadow
           receiveShadow
           geometry={gltf.nodes.Tire_tireFR.geometry}
-          material={gltf.materials['Farm3.027']}
-          position={[0.47, 0.4, -0.92]}
+          material={gltf.materials['Farm3.022']}
+          position={[0.48, 0.43, -0.93]}
           rotation={[Math.PI, 0, Math.PI]}
         />
       </T.Group>
