@@ -55,25 +55,20 @@
 </T.DirectionalLight>
 <T.AmbientLight intensity={0.3} />
 <!-- Fog -->
-<T.FogExp2 color="#cccccc" density={0.02} />
-
-<!-- <T.GridHelper args={[50, 50]} /> -->
-
-<!-- <TransformControls translationSnap={1} position.y={1}>
-	<T.Mesh geometry={new BoxGeometry(2, 2, 2)} material={new MeshStandardMaterial()} castShadow />
-</TransformControls> -->
-
+<T.Fog /> 
 <!-- Envirounment -->
 <World />
+<!-- Pois -->
+<T.Group position={[-10,0,-2]}>
+	<!-- <Signpost/>
+	<Sign1/>
+	<Sign2/>
+	<Sign3/>
+	<Sign4/> -->
+</T.Group>
+<Dancingchili position={[60.5, 0, -61]} rotation.y={9}/>
 
-<!-- POINTofINTERESTs -->
-<Signpost/>
-<Sign1/>
-<Sign2/>
-<Sign3/>
-<Sign4/>
-
-<Buildings />
+<!-- <Buildings />
 
 <Plant
 	on:create={({ ref }) => {
@@ -92,8 +87,8 @@
 		$cameraControls.fitToBox($rockingChili, true);
 	}}
 />
-<Dancingchili position={[65, 0, -58]} rotation.y={90}/>
+
 
 <Drivingchili/>
 
-<Walkingchili/>
+<Walkingchili/> -->

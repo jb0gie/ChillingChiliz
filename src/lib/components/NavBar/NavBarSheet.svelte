@@ -25,10 +25,8 @@
 			<ul class="mt-4">
 				<li class="mb-2">Home</li>
 				<li class="mb-2">About</li>
-				<li class="mb-2">Events</li>
-				<li class="mb-2">Services</li>
-				<li class="mb-2">Art</li>
-				<li class="mb-2">Music</li>
+				<li class="mb-2">Tokenomics</li>
+				<li class="mb-2">FAQ</li>
 			</ul>
 		</div>
 	</Sheet.Content>
