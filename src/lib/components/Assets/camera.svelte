@@ -1,41 +1,27 @@
 <script>
-	import { forwardEventHandlers, T, useThrelte } from '@threlte/core';
-	//Camera controls
-	import CameraControls from '../CameraControls/CameraControls.svelte';
+	import { T } from '@threlte/core';
 	import { cameraControls } from '../../stores';
-	// const { invalidate } = useThrelte();
-	// const el = document.getElementById('int-target');
-	// const component = forwardEventHandlers();
-	const startPos = [70.5, 2, -60];
+	import CameraControls from '../CameraControls/CameraControls.svelte';
+	
+	const startPos = [64.5, 2, -64.5];
+
+	let camera
+	$: if ($cameraControls) {
+		camera = $cameraControls._camera
+		// $cameraControls.zoom(camera.zoom / 0.5, true)
+	}
 </script>
 
-<T.PerspectiveCamera
-	makeDefault
-	position={startPos}
+<T.PerspectiveCamera makeDefault position={startPos}
 	on:create={({ ref }) => {
 		ref.lookAt(0, 1, 0);
 	}}
 >
 	<CameraControls
-		enabled={false}
+		enabled={false} 
 		on:create={({ ref }) => {
 			$cameraControls = ref;
+			
 		}}
 	/>
-	<!-- <T.OrbitControls bind:this={$component} args={[ref, el]} on:change={invalidate} /> -->
 </T.PerspectiveCamera>
-
-<!-- EXAMPLE 
-<T.OrthographicCamera
-  zoom={80}
-  position={[10, 10, 10]}
-  makeDefault
-  let:ref
->
-  <T.OrbitControls
-    bind:this={$component}
-    args={[ref, el]}
-    on:change={invalidate}
-    enableZoom={false}
-  />
-</T.OrthographicCamera> -->

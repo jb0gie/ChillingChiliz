@@ -20,17 +20,17 @@
 		},
 		dark: {
 			turbidity: 20,
-      rayleigh: 0.57,
-      azimuth: 180,
-      elevation: -5,
-      mieCoefficient: 0.038,
-      mieDirectionalG: 0,
-      exposure: 0.26
+      		rayleigh: 0.57,
+      		azimuth: 180,
+      		elevation: -5,
+      		mieCoefficient: 0.038,
+      		mieDirectionalG: 0,
+      		exposure: 0.26
 		}
 	};
 
 	// initialize with light mode preset
-	let springValue = spring(presets.light, { damping: 0.95, precision: 0.0001, stiffness: 0.05 }); 
+	let springValue = spring(presets.light, { damping: 0.95, precision: 0.0001, stiffness: 0.02 }); 
 
 	// update the spring value when the mode changes
 	let unsubscribe = mode.subscribe((value) => {

@@ -5,6 +5,6 @@
 
 <div class="h-screen w-auto">
 	<Canvas>
-		<Scene/>
+		<Scene />
 	</Canvas>
 </div>

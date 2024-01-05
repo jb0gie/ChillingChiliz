@@ -53,13 +53,13 @@
 						<DropdownMenu.Separator />
 						<a href="/services" class={navItem}>
 							<DropdownMenu.Item>
-								<DropdownMenu.Label>Services</DropdownMenu.Label>
+								<DropdownMenu.Label>Tokenomics</DropdownMenu.Label>
 							</DropdownMenu.Item>
 						</a>
 						<DropdownMenu.Separator />
 						<a href="/events" class={navItem}>
 							<DropdownMenu.Item>
-								<DropdownMenu.Label>Events</DropdownMenu.Label>
+								<DropdownMenu.Label>FAQ</DropdownMenu.Label>
 							</DropdownMenu.Item>
 						</a>
 					</DropdownMenu.Content>
